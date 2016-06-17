@@ -1,0 +1,8 @@
+/log/*.log
+/tmp
+.DS_Store
+.bundle
+.idea
+.idea/*
+/spec/tmp
+capybara-*.html
