@@ -20,8 +20,11 @@ RSpec.describe User, type: :model do
   end
 
   it 'cannot set the role to x' do
-    invalid_user = FactoryGirl.create(:user, role: 'x')
-    expect(invalid_user).not_to be_valid
+   # invalid_user = FactoryGirl.create(:user, role: 'x')
+   # expect(invalid_user).not_to be_valid
+
+    expect { FactoryGirl.create(:user, role: 'x') }
+        .to raise_error(ActiveRecord::RecordInvalid, 'Validation failed: Role x is not permitted')
   end
 
   describe 'DB table' do
