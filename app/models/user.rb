@@ -6,4 +6,8 @@ class User < ActiveRecord::Base
   validates_presence_of :role
   validates :role, inclusion: { in: PERMITTED_ROLES,
                                message: '%{value} is not permitted'}
+
+  def admin?
+    self.role == 'admin'
+  end
 end

@@ -22,6 +22,7 @@ RSpec.describe User, type: :model do
   end
 
   describe '#role' do
+
     it 'is a customer by default' do
       expect(subject.role).to eq 'customer'
     end
@@ -29,6 +30,16 @@ RSpec.describe User, type: :model do
     it 'can set the role to admin' do
       admin = FactoryGirl.create(:user, role: 'admin')
       expect(admin).to be_valid
+    end
+
+    it 'returns true on #admin? if role == \'admin\'' do
+      admin = FactoryGirl.create(:user, role: 'admin')
+      expect(admin.admin?).to eq true
+    end
+
+    it 'returns false on #admin? if role != \'admin\'' do
+      not_admin = FactoryGirl.create(:user, role: 'customer')
+      expect(not_admin.admin?).to eq false
     end
 
     it 'can set the role to restaurant owner' do
@@ -41,11 +52,5 @@ RSpec.describe User, type: :model do
           .to raise_error(ActiveRecord::RecordInvalid, 'Validation failed: Role x is not permitted')
     end
   end
-
-  describe 'abilities' do
-    describe 'for admin' do
-      it { is_expected.to be_able_to(:manage, Restaurant.new) }
-    end
-  end
-
+  
 end
