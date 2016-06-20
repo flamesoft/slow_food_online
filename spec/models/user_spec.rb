@@ -4,7 +4,7 @@ RSpec.describe User, type: :model do
   it 'should have valid Factory' do
     expect(FactoryGirl.create(:user)).to be_valid
   end
-  
+
   describe 'DB table' do
     it { is_expected.to have_db_column :id }
     it { is_expected.to have_db_column :username }
@@ -39,6 +39,12 @@ RSpec.describe User, type: :model do
     it 'cannot set the role to x' do
       expect { FactoryGirl.create(:user, role: 'x') }
           .to raise_error(ActiveRecord::RecordInvalid, 'Validation failed: Role x is not permitted')
+    end
+  end
+
+  describe 'abilities' do
+    describe 'for admin' do
+      it { is_expected.to be_able_to(:manage, Restaurant.new) }
     end
   end
 
