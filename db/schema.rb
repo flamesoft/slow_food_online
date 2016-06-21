@@ -30,9 +30,11 @@ ActiveRecord::Schema.define(version: 20160621084608) do
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
     t.text     "description"
+    t.integer  "user_id"
   end
 
   add_index "restaurants", ["restaurant_category_id"], name: "index_restaurants_on_restaurant_category_id", using: :btree
+  add_index "restaurants", ["user_id"], name: "index_restaurants_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
@@ -55,4 +57,5 @@ ActiveRecord::Schema.define(version: 20160621084608) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "restaurants", "restaurant_categories"
+  add_foreign_key "restaurants", "users"
 end

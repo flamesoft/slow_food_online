@@ -9,6 +9,7 @@ gem 'turbolinks'
 gem 'faker'
 gem 'haml-rails' #Template engine
 gem 'devise'
+gem 'cancancan'
 
 group :development, :test do
   gem 'pry'
