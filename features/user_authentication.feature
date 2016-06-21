@@ -34,3 +34,11 @@ Feature: As a visitor
     And I fill in "Password confirmation" with "12345678"
     And I click "Sign up"
     Then I should see "Username has already been taken"
+
+  Scenario: Email must not be duplicate
+    Given I am on the "sign up page"
+    And I fill in "Email" with "daniel@gmail.com"
+    And I fill in "Password" with "12345678"
+    And I fill in "Password confirmation" with "12345678"
+    And I click "Sign up"
+    Then I should see "Email has already been taken"
