@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'faker'
 gem 'haml-rails' #Template engine
+gem 'devise'
 
 group :development, :test do
   gem 'pry'
