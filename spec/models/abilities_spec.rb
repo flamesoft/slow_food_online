@@ -7,13 +7,22 @@ RSpec.describe Ability, type: :model do
 
   describe 'for admin' do
     subject(:ability) { Ability.new(admin) }
-    it { is_expected.to be_able_to(:manage, Restaurant.new) }
+
+    context 'can manage all restaurants' do
+      it { is_expected.to be_able_to(:manage, Restaurant.new) }
+    end
   end
 
   describe 'for customer' do
     subject(:ability) { Ability.new(customer) }
-    it { is_expected.not_to be_able_to(:manage, Restaurant.new) }
-    it { is_expected.to be_able_to(:read, Restaurant.new) }
+
+    context 'cannot manage any restaurant' do
+      it { is_expected.not_to be_able_to(:manage, Restaurant.new) }
+    end
+
+    context 'can read all restaurants' do
+      it { is_expected.to be_able_to(:read, Restaurant.new) }
+    end
   end
 
   describe 'for restaurant_owner' do
@@ -27,6 +36,7 @@ RSpec.describe Ability, type: :model do
     context 'can\'t :manage not his restaurant' do
       it { is_expected.not_to be_able_to(:manage, Restaurant.new(user: rest_owner_2)) }
     end
+
     context ':read all restaurants' do
       it { is_expected.to be_able_to(:read, Restaurant.new) }
     end
