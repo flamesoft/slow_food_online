@@ -12,7 +12,7 @@ RSpec.describe User, type: :model do
   end
 
   describe 'Relationships' do
-    pending
+    it {is_expected.to have_one :restaurant}
   end
 
   describe 'Validations' do
@@ -52,5 +52,5 @@ RSpec.describe User, type: :model do
           .to raise_error(ActiveRecord::RecordInvalid, 'Validation failed: Role x is not permitted')
     end
   end
-  
+
 end
