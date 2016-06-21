@@ -49,7 +49,9 @@ end
 Then(/^I should be on the "([^"]*)"$/) do |page|
   case page
     when "home page" then
-      visit root_path
+      expect(current_path).to eq root_path
+    when "login page" then
+      expect(current_path).to eq new_user_session_path
   end
 end
 

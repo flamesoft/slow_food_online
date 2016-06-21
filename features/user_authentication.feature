@@ -65,3 +65,10 @@ Feature: As a visitor
     And I fill in "Password" with "password"
     And I click "Log in"
     Then I should be on the "home page"
+
+  Scenario: Log in failed with wrong password
+    Given I am on the "login page"
+    And I fill in "Email" with "calle@gmail.com"
+    And I fill in "Password" with "wrong_password"
+    And I click "Log in"
+    Then I should be on the "login page"
