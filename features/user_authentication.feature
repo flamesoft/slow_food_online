@@ -42,3 +42,11 @@ Feature: As a visitor
     And I fill in "Password confirmation" with "12345678"
     And I click "Sign up"
     Then I should see "Email has already been taken"
+
+  Scenario: Password must not be blank
+    Given I am on the "sign up page"
+    And I fill in "Email" with "testperson@gmail.com"
+    And I fill in "Password" with ""
+    And I fill in "Password confirmation" with ""
+    And I click "Sign up"
+    Then I should see "Password can't be blank"
