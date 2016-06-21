@@ -18,8 +18,18 @@ RSpec.describe Ability, type: :model do
 
   describe 'for restaurant_owner' do
     subject(:ability) { Ability.new(rest_owner) }
-    it { is_expected.to be_able_to(:manage, Restaurant.where(user: rest_owner)) }
-    it { is_expected.to be_able_to(:read, Restaurant.new) }
+    let(:rest_owner_2) { FactoryGirl.create(:user, username: 'SecondRestOwner', role: 'restaurant_owner') }
+
+    context ':manage his own restaurant' do
+      it { is_expected.to be_able_to(:manage, Restaurant.new(user: rest_owner)) }
+    end
+
+    context 'can\'t :manage not his restaurant' do
+      it { is_expected.not_to be_able_to(:manage, Restaurant.new(user: rest_owner_2)) }
+    end
+    context ':read all restaurants' do
+      it { is_expected.to be_able_to(:read, Restaurant.new) }
+    end
   end
 
 end

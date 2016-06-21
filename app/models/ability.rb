@@ -9,6 +9,7 @@ class Ability
         can :manage, :all
       elsif user.rest_owner?
         can :manage, Restaurant, user: user
+        can :read, :all
       else
         can :read, :all
       end
