@@ -45,3 +45,14 @@ end
 Then(/^I click "([^"]*)"$/) do |value|
   click_link_or_button(value)
 end
+
+Then(/^I should be on the "([^"]*)"$/) do |page|
+  case page
+    when "home page" then
+      visit root_path
+  end
+end
+
+Given(/^I fill in "([^"]*)" with "([^"]*)"$/) do |field, value|
+  fill_in(field, with: value)
+end

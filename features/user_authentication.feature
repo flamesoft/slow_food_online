@@ -8,5 +8,5 @@ Feature: As a visitor
       And I fill in "Email" with "visitor@gmail.com"
       And I fill in "Password" with "12345678"
       And I fill in "Password confirmation" with "12345678"
-      And I click on the "Sign up" button
+      And I click "Sign up"
       Then I should be on the "home page"
