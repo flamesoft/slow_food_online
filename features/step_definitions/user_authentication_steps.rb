@@ -16,3 +16,7 @@ end
 Then(/^I should see "([^"]*)"$/) do |text|
   expect(page).to have_text(text)
 end
+
+Then(/^I should be on the "([^"]*)"$/) do |page|
+  pending # Write code here for checking on the home page
+end
