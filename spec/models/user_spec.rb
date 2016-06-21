@@ -47,6 +47,16 @@ RSpec.describe User, type: :model do
       expect(owner).to be_valid
     end
 
+    it 'returns true on #rest_owner? if role == \'admin\'' do
+      rest_owner = FactoryGirl.create(:user, role: 'restaurant_owner')
+      expect(rest_owner.rest_owner?).to eq true
+    end
+
+    it 'returns false on #rest_owner? if role != \'restaurant_owner\'' do
+      not_rest_owner = FactoryGirl.create(:user, role: 'customer')
+      expect(not_rest_owner.rest_owner?).to eq false
+    end
+
     it 'cannot set the role to x' do
       expect { FactoryGirl.create(:user, role: 'x') }
           .to raise_error(ActiveRecord::RecordInvalid, 'Validation failed: Role x is not permitted')

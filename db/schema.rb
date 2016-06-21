@@ -38,15 +38,11 @@ ActiveRecord::Schema.define(version: 20160621075938) do
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
-    t.string   "role",          default: "customer"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
-    t.integer  "restaurant_id"
+    t.string   "role",       default: "customer"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
-
-  add_index "users", ["restaurant_id"], name: "index_users_on_restaurant_id", using: :btree
 
   add_foreign_key "restaurants", "restaurant_categories"
   add_foreign_key "restaurants", "users"
-  add_foreign_key "users", "restaurants"
 end

@@ -18,7 +18,7 @@ RSpec.describe Ability, type: :model do
 
   describe 'for restaurant_owner' do
     subject(:ability) { Ability.new(rest_owner) }
-    it { is_expected.not_to be_able_to(:manage, Restaurant.new) }
+    it { is_expected.to be_able_to(:manage, Restaurant.where(user: rest_owner)) }
     it { is_expected.to be_able_to(:read, Restaurant.new) }
   end
 

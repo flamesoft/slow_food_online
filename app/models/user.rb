@@ -11,4 +11,8 @@ class User < ActiveRecord::Base
   def admin?
     self.role == 'admin'
   end
+
+  def rest_owner?
+    self.role == 'restaurant_owner'
+  end
 end
