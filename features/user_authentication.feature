@@ -58,3 +58,10 @@ Feature: As a visitor
     And I fill in "Password confirmation" with "12345678"
     And I click "Sign up"
     Then I should see "Email can't be blank"
+
+  Scenario: Log in successfully with an existing account
+    Given I am on the "login page"
+    And I fill in "Email" with "calle@gmail.com"
+    And I fill in "Password" with "password"
+    And I click "Log in"
+    Then I should be on the "home page"
