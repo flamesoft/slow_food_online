@@ -59,6 +59,15 @@ Feature: As a visitor
     And I click "Sign up"
     Then I should see "Email can't be blank"
 
+  Scenario: Email must be valid
+    Given I am on the "sign up page"
+    And I fill in "Username" with "123"
+    And I fill in "Email" with "123.123"
+    And I fill in "Password" with "12345678"
+    And I fill in "Password confirmation" with "12345678"
+    And I click "Sign up"
+    Then I should see "Email is invalid"
+
   Scenario: Log in successfully with an existing account
     Given I am on the "login page"
     And I fill in "Email" with "calle@gmail.com"
