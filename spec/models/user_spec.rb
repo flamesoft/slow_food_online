@@ -24,6 +24,11 @@ RSpec.describe User, type: :model do
     it { is_expected.to validate_presence_of(:username) }
     it { is_expected.to validate_uniqueness_of(:username) }
     it { is_expected.to validate_presence_of(:role) }
+    context 'Validate email' do
+      it { should allow_value('user@example.com').for(:email) }
+      it { should_not allow_value('user@example').for(:email) }
+      it { should_not allow_value('123@123').for(:email) }
+    end
   end
 
   describe '#role' do
