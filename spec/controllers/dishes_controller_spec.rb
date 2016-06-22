@@ -2,9 +2,6 @@ require 'rails_helper'
 
 RSpec.describe DishesController, type: :controller do
 
-  # This should return the minimal set of attributes required to create a valid
-  # Dish. As you add validations to Dish, be sure to
-  # adjust the attributes here as well.
   let(:valid_attributes) {
     skip("Add a hash of attributes valid for your model")
   }
