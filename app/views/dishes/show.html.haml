@@ -1,5 +1,6 @@
 %p#notice= notice
-
+%p
+  %img{:src => @dish.img_url}
 %p
   %b Name:
   = @dish.name
@@ -12,9 +13,6 @@
 %p
   %b Calories:
   = @dish.calories
-%p
-  %b Img url:
-  = @dish.img_url
 
 = link_to 'Edit', edit_dish_path(@dish)
 \|
