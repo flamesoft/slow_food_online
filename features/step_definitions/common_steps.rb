@@ -64,3 +64,7 @@ end
 Given(/^I fill in "([^"]*)" with "([^"]*)"$/) do |field, value|
   fill_in(field, with: value)
 end
+
+Given(/^I click on "([^"]*)"$/) do |component|
+  click_link_or_button(component)
+end

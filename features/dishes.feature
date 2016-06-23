@@ -19,7 +19,14 @@ Feature: As a visitor
       | Grilled duck    | maincourse  | 140   |
       | Fried banana    | dessert     | 50    |
 
-Scenario:
-  Given I am on the "dish list page"
-  Then I should see all the dishes
-  And I should see all the prices
+  Scenario: Show all the dishes and the prices
+    Given I am on the "dish list page"
+    Then I should see all the dishes
+    And I should see all the prices
+
+  Scenario: Show the dish details page
+    Given I am on the "dish list page"
+    And I click on "Dimsun"
+    Then I should be on the "dish detail page"
+    And I should see "Dimsun"
+    And I should see "80"

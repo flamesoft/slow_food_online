@@ -18,12 +18,11 @@
     %tbody
       - @dishes.each do |dish|
         %tr
-          %td= dish.name
+          %td= link_to dish.name, dish
           %td= dish.alergyInfo
           %td= dish.price
           %td= dish.calories
           %td= link_to image_tag(dish.img_url)
-          %td= link_to 'Show', dish
           %td= link_to 'Edit', edit_dish_path(dish)
           %td= link_to 'Destroy', dish, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
