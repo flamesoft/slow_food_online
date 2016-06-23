@@ -14,12 +14,12 @@ Feature: As a visitor
       | China Palace   | Chinese  |
 
     Given the following dishes exist
-      | name            | menu        |
-      | Sallad          | starter     |
-      | Dimsun          | starter     |
-      | Grilled duck    | maincourse  |
-      | Dumpling        | maincourse  |
-      | Fried banana    | dessert     |
-      | Sweet potato    | dessert     |
+      | name            | menu        | price |
+      | Dimsun          | starter     | 80    |
+      | Grilled duck    | maincourse  | 140   |
+      | Fried banana    | dessert     | 50    |
 
-  
+Scenario:
+  Given I am on the "dish list page"
+  Then I should see all the dishes
+  And I should see all the prices
