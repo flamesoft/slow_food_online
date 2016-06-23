@@ -22,6 +22,4 @@ Feature: As a visitor
       | Fried banana    | dessert     |
       | Sweet potato    | dessert     |
 
-  Scenario:
-    Given I am on the "dishes page"
-    Then I should see "Sallad"
+  
