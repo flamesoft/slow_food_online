@@ -12,7 +12,7 @@ Given(/^I am on the "([^"]*)"$/) do |page|
       visit dishes_path
     when "dish detail page" then
       dish = FactoryGirl.create(:dish, name: 'Dimsun', price: '90',
-                                alergyInfo: 'soy', calories: '120')
+                                allergy_info: 'soy', calories: '120')
       visit dish_path(dish[:id])
   end
 end
