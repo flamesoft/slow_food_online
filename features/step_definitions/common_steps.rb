@@ -10,6 +10,10 @@ Given(/^I am on the "([^"]*)"$/) do |page|
       visit new_user_password_path
     when "dish list page" then
       visit dishes_path
+    when "dish detail page" then
+      dish = FactoryGirl.create(:dish, name: 'Dimsun', price: '90',
+                                alergyInfo: 'soy', calories: '120')
+      visit dish_path(dish[:id])
   end
 end
 
