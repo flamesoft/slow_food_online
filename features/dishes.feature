@@ -27,6 +27,6 @@ Feature: As a visitor
   Scenario: Show the dish details page
     Given I am on the "dish list page"
     And I click on "Dimsun"
-    Then I should be on the "dish detail page"
+    Then I should be on the "dish detail page" for "Dimsun"
     And I should see "Dimsun"
     And I should see "80"

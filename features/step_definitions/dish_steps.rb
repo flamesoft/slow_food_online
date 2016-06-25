@@ -19,3 +19,8 @@ Then(/^I should see all the prices$/) do
     Then I should see "50"
   }
 end
+
+Then(/^I should be on the "([^"]*)" for "([^"]*)"$/) do |page, dish_name|
+  dish = Dish.find_by(name: dish_name)
+  expect(current_path).to eq dish_path(dish)
+end
