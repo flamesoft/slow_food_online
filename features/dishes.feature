@@ -13,11 +13,17 @@ Feature: As a visitor
       | Pizza Place    | Samoan   |
       | China Palace   | Chinese  |
 
+    Given the following menus exist
+      | name              | id   |
+      | Starter           | 1    |
+      | Main course       | 2    |
+      | Desert            | 3    |
+
     Given the following dishes exist
-      | name            | menu        | price |
-      | Dimsun          | starter     | 80    |
-      | Grilled duck    | maincourse  | 140   |
-      | Fried banana    | dessert     | 50    |
+      | name            | price | menu_id |
+      | Dimsun          | 80    | 1       |
+      | Grilled duck    | 140   | 2       |
+      | Fried banana    | 50    | 3       |
 
   Scenario: Show all the dishes and the prices
     Given I am on the "dish list page"
