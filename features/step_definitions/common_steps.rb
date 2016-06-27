@@ -25,6 +25,10 @@ Then(/^I should see the "([^"]*)"$/) do |id|
   find_by_id(id)
 end
 
+Then(/^I should not see "([^"]*)"$/) do |text|
+  expect(page).not_to have_text(text)
+end
+
 When(/^I select "([^"]*)" from "([^"]*)"$/) do |value, field|
   select(value, from: field)
 end

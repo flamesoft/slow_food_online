@@ -17,7 +17,7 @@ Feature: As a visitor
       | name              | id   |
       | Starter           | 1    |
       | Main course       | 2    |
-      | Desert            | 3    |
+      | Dessert           | 3    |
 
     Given the following dishes exist
       | name            | price | menu_id |
@@ -36,3 +36,10 @@ Feature: As a visitor
     Then I should be on the "dish detail page" for "Dimsun"
     And I should see "Dimsun"
     And I should see "80"
+
+  Scenario: Show starter menu
+    Given I am on the "dish list page"
+    And I click on "Starter"
+    Then I should see "Dimsun"
+    And I should not see "Grilled duck"
+    And I should not see "Fried banana"
