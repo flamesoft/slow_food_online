@@ -40,3 +40,6 @@ $(window).resize(function () {
     fixedFooter();//at page resize
 });
 
+function toggleDiv(divId){
+  $("#" + divId).toggle();
+}

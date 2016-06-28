@@ -36,16 +36,3 @@ Feature: As a visitor
     Then I should be on the "dish detail page" for "Dimsun"
     And I should see "Dimsun"
     And I should see "80"
-
-#To do: move the dish list page to restaurant's show page
-#This test will be changed later
-  Scenario: Show all menus
-    Given I am on the "dish list page"
-    And I click "Menu"
-    Then I should see "Starter"
-    And I should see "Main course"
-    And I should see "Dessert"
-    #And I click "Starter"
-    #Then I should see "Dimsun"
-    #And I should not see "Grilled duck"
-    #And I should not see "Fried banana"
