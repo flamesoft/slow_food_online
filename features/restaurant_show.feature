@@ -19,7 +19,7 @@ Feature: As a visitor, when I have made my selection
       | Starter           | 1    |  China Palace    |
       | Main course       | 2    |  China Palace    |
       | Dessert           | 3    |  China Palace    |
-      | Lunch             | 4    |  Pizza Place     | 
+      | Lunch             | 4    |  Pizza Place     |
 
     Given the following dishes exist
       | name            | price | menu_id |
@@ -37,7 +37,6 @@ Feature: As a visitor, when I have made my selection
 
   Scenario: Show all menus
     Given I am on the show page for "China Palace"
-    And I click "Menu"
     Then I should see "Starter"
     And I should see "Main course"
     And I should see "Dessert"
