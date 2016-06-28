@@ -24,6 +24,8 @@ Feature: As a visitor, when I have made my selection
     Given the following dishes exist
       | name            | price | menu_id |
       | Dimsun          | 80    | 1       |
+      | Noodle Soup     | 90    | 1       |
+      | Lo Mein         | 270   | 1       |
       | Grilled duck    | 140   | 2       |
       | Fried banana    | 50    | 3       |
 
@@ -40,7 +42,12 @@ Feature: As a visitor, when I have made my selection
     Then I should see "Starter"
     And I should see "Main course"
     And I should see "Dessert"
-    #And I click "Starter"
-    #Then I should see "Dimsun"
-    #And I should not see "Grilled duck"
-    #And I should not see "Fried banana"
+
+  Scenario: Show menu content
+    Given I am on the show page for "China Palace"
+    And I click "Starter"
+    Then I should see "Dimsun"
+    Then I should see "Lo Mein"
+    Then I should see "Noodle Soup"
+    And I should not see "Grilled duck"
+    And I should not see "Fried banana"
