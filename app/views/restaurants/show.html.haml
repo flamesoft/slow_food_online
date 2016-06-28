@@ -1,6 +1,10 @@
-%h1 Restaurants#show
 - array = request.url.split("/")
 - restaurant_id = array[4]
-= Restaurant.find_by(id: restaurant_id)
+- rest = Restaurant.find_by(id: restaurant_id)
+
+%h1= rest[:name]
+
 %button{ onclick: "toggleDiv(menu)", title: "Menu", type: "button"} Menu
+
 #menu
+  
