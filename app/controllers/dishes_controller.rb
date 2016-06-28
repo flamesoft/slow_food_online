@@ -3,7 +3,8 @@ class DishesController < ApplicationController
 
   # GET /dishes
   def index
-    @dishes = Dish.where(menu_id: @selected_menu[:id])
+    menu = Menu.find(params[:menu])
+    @dishes = Dish.where(menu: menu)
   end
 
   # GET /dishes/1
