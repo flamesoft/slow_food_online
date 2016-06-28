@@ -14,10 +14,11 @@ Feature: As a visitor
       | China Palace   | Chinese  |
 
     Given the following menus exist
-      | name              | id   |
-      | Starter           | 1    |
-      | Main course       | 2    |
-      | Dessert           | 3    |
+      | name              | id   |  restaurant_name |
+      | Starter           | 1    |  China Palace    |
+      | Main course       | 2    |  China Palace    |
+      | Dessert           | 3    |  China Palace    |
+      | Lunch             | 4    |  Pizza Place     |
 
     Given the following dishes exist
       | name            | price | menu_id |
