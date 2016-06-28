@@ -35,6 +35,7 @@ function fixedFooter() {
 }
 $(document).ready(function () {
     fixedFooter();//at page load
+    $("#menu").hide();
     $("#menu_button").click(function(){
        $("#menu").toggle();
    });
