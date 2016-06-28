@@ -15,10 +15,11 @@ Feature: As a visitor, when I have made my selection
       | China Palace     | Chinese  | 59.1151555 | 18.2538833 |
 
     Given the following menus exist
-      | name              | id   |
-      | Starter           | 1    |
-      | Main course       | 2    |
-      | Dessert           | 3    |
+      | name              | id   |  restaurant_name |
+      | Starter           | 1    |  China Palace    |
+      | Main course       | 2    |  China Palace    |
+      | Dessert           | 3    |  China Palace    |
+      | Lunch             | 4    |  Pizza Place     | 
 
     Given the following dishes exist
       | name            | price | menu_id |
