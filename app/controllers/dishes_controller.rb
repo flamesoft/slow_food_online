@@ -3,7 +3,7 @@ class DishesController < ApplicationController
 
   # GET /dishes
   def index
-    @dishes = Dish.all
+    @dishes = Dish.where(menu_id: @selected_menu[:id])
   end
 
   # GET /dishes/1
