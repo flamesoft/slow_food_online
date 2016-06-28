@@ -35,12 +35,12 @@ function fixedFooter() {
 }
 $(document).ready(function () {
     fixedFooter();//at page load
+    $("#menu_button").click(function(){
+       alert("toggle");
+       $("#menu").toggle();
+   });
 });
 
 $(window).resize(function () {
     fixedFooter();//at page resize
 });
-
-function toggleDiv(divId){
-  $("#" + divId).toggle();
-}

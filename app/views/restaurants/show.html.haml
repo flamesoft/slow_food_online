@@ -4,7 +4,7 @@
 
 %h1= rest[:name]
 
-%button{ onclick: "toggleDiv(menu)", title: "Menu", type: "button"} Menu
+%button{id: "menu_button"} Menu
 
 #menu
 - menu_list = Menu.where(restaurant_id: restaurant_id)
