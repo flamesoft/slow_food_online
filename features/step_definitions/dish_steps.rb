@@ -1,6 +1,8 @@
 Given(/^the following menus exist$/) do |table|
   table.hashes.each do |menu|
-    FactoryGirl.create(:menu, name: menu[:name], id: menu[:id])
+    restaurant = Restaurant.find_by(name: menu[:restaurant_name])
+    FactoryGirl.create(:menu, name: menu[:name], id: menu[:id],
+                       restaurant_id: restaurant[:id])
   end
 end
 
