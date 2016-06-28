@@ -12,5 +12,6 @@ RSpec.describe Menu, type: :model do
 
   describe 'Relationships' do
     it { is_expected.to have_many :dishes }
+    it { is_expected.to belong_to :restaurant }
   end
 end
