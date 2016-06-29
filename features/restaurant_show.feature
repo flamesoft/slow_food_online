@@ -16,10 +16,10 @@ Feature: As a visitor, when I have made my selection
 
     Given the following menus exist
       | name              | id   |  restaurant_name |
-      | Starter           | 1    |  China Palace    |
-      | Main course       | 2    |  China Palace    |
-      | Dessert           | 3    |  China Palace    |
-      | Lunch             | 4    |  Pizza Place     |
+      | Breakfast         | 1    |  China Palace    |
+      | Lunch             | 2    |  China Palace    |
+      | Dinner            | 3    |  China Palace    |
+      | Family            | 4    |  Pizza Place     |
 
     Given the following dishes exist
       | name            | price | menu_id |
@@ -39,13 +39,13 @@ Feature: As a visitor, when I have made my selection
 
   Scenario: Show all menus
     Given I am on the show page for "China Palace"
-    Then I should see "Starter"
-    And I should see "Main course"
-    And I should see "Dessert"
+    Then I should see "Breakfast"
+    And I should see "Lunch"
+    And I should see "Dinner"
 
   Scenario: Show menu content
     Given I am on the show page for "China Palace"
-    And I click "Starter"
+    And I click "Breakfast"
     Then I should see "Dimsun"
     Then I should see "Lo Mein"
     Then I should see "Noodle Soup"
