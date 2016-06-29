@@ -24,14 +24,13 @@ def create_restaurant(args = {})
   rest.save(validate: false)
 end
 
-def build_menus_with_dishes(menus)
+def build_menus_with_dishes(menu_names)
   Restaurant.all.each do |restaurant|
-    menus.each do |menu|
-      menu = Menu.create(name: menu, restaurant: restaurant)
+    menu_names.each do |menu_name|
+      menu = Menu.create(name: menu_name, restaurant: restaurant)
       3.times { |i| add_dish(i + 1, menu) }
     end
   end
-
 end
 
 def add_dish(number, menu)
