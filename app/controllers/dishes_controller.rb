@@ -15,7 +15,11 @@ class DishesController < ApplicationController
     dish = Dish.find(params[:dish_id])
     order = Order.create(user: current_user)
     order.add(dish, dish.price)
-    binding.pry
+    menu = Menu.find(dish.menu_id)
+    flash[:notice] = 'You have made 1 order'
+    redirect_to dishes_url(menu: menu)
+    
+
   end
 
   # GET /dishes/new
