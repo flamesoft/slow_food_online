@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
          :rememberable, :trackable, :validatable
 
   has_one :restaurant
+  has_many :orders
 
   validates_presence_of :username
   validates_uniqueness_of :username

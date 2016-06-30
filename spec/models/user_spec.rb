@@ -17,6 +17,7 @@ RSpec.describe User, type: :model do
 
   describe 'Relationships' do
     it { is_expected.to have_one :restaurant }
+    it { is_expected.to have_many :orders }
   end
 
   describe 'Validations' do

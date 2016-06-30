@@ -3,6 +3,10 @@ Feature: As a visitor
   I want to be able to put dishes into a cart
 
   Background:
+    Given the following users are registered in the system
+      | username    | email             |
+      | Calle       | calle@gmail.com   |
+      
     Given the following categories exist
       | title   |
       | Chinese |
@@ -21,6 +25,7 @@ Feature: As a visitor
       | Soy milk        | 40    | 1       |
 
     Scenario: Add Dimsun to cart
-      Given I am on the "dish list page" for menu "Breakfast"
+      Given I am logged-in as "Calle"
+      And I am on the "dish list page" for menu "Breakfast"
       And I click "Add to cart" for "Dimsun"
       #hen show me the page

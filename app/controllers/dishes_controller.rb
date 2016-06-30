@@ -13,8 +13,9 @@ class DishesController < ApplicationController
 
   def add_to_cart
     dish = Dish.find(params[:dish_id])
-    order = Cart.create
-    #binding.pry
+    order = Order.create(user: current_user)
+    order.add(dish, dish.price)
+    binding.pry
   end
 
   # GET /dishes/new

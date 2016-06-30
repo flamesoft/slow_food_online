@@ -11,6 +11,7 @@ gem 'haml-rails' # Template engine
 gem 'devise'
 gem 'cancancan'
 gem 'geocoder'
+gem 'acts_as_shopping_cart'
 # gem 'foundation-rails'
 
 group :development, :test do
