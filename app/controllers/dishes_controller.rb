@@ -16,9 +16,9 @@ class DishesController < ApplicationController
     order = Order.create(user: current_user)
     order.add(dish, dish.price)
     menu = Menu.find(dish.menu_id)
-    flash[:notice] = 'You have made 1 order'
+    flash[:notice] = 'Successfully added to cart'
     redirect_to dishes_url(menu: menu)
-    
+
 
   end
 
