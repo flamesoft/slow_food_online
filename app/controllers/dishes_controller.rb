@@ -11,6 +11,12 @@ class DishesController < ApplicationController
   def show
   end
 
+  def add_to_cart
+    dish = Dish.find(params[:dish_id])
+    order = Cart.create
+    #binding.pry
+  end
+
   # GET /dishes/new
   # def new
   #   @dish = Dish.new
