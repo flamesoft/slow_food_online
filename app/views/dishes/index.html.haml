@@ -14,10 +14,11 @@
         %th
         %th
         %th
+        %th
 
     %tbody
       - @dishes.each do |dish|
-        %tr
+        %tr{id: "#{dish.id}"}
           %td= link_to dish.name, dish
           %td= dish.allergy_info
           %td= dish.price
@@ -25,6 +26,7 @@
           %td= link_to image_tag(dish.img_url)
           %td= link_to 'Edit', edit_dish_path(dish)
           %td= link_to 'Destroy', dish, method: :delete, data: { confirm: 'Are you sure?' }
+          %td= link_to 'Add to cart', '#'
 
   %br
 
