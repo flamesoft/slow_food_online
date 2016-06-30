@@ -13,10 +13,7 @@ class DishesController < ApplicationController
 
   def add_to_cart
     dish = Dish.find(params[:dish_id])
-    order = Order.find_by(user: current_user)
-    if order.nil?
-      order = Order.create(user: current_user)
-    end
+    order = Order.find_or_create_by(user: current_user)
     order.add(dish, dish.price)
     menu = Menu.find(dish.menu_id)
     flash[:notice] = 'Successfully added to cart'
