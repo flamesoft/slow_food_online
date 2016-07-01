@@ -25,6 +25,10 @@ Feature: As a visitor
       | Soy milk        | 40    | 1       |
       | Congee          | 75    | 1       |
 
+    Given the following orders exist
+      | user_name      | status   |
+      | Calle          | false    |
+
     Scenario: Add Dimsun to cart
       Given I am logged-in as "Calle"
       And I am on the "dish list page" for menu "Breakfast"
@@ -38,3 +42,11 @@ Feature: As a visitor
       And I click "Add to cart" for "Soy milk"
       And I click "Add to cart" for "Congee"
       Then I should see "Successfully added to cart"
+
+    Scenario: Add dishes to active order
+      Given I am logged-in as "Calle"
+      And I am on the "dish list page" for menu "Breakfast"
+      And I click "Add to cart" for "Congee"
+      And I click "Add to cart" for "Soy milk"
+      Then I should see "Successfully added to cart"
+      And my current order is different from delivered order for "Calle"
