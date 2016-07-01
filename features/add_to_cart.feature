@@ -43,7 +43,7 @@ Feature: As a visitor
       And I click "Add to cart" for "Congee"
       Then I should see "Successfully added to cart"
 
-    Scenario: Add dishes to active order
+    Scenario: Add dishes only to active order
       Given I am logged-in as "Calle"
       And I am on the "dish list page" for menu "Breakfast"
       And I click "Add to cart" for "Congee"
