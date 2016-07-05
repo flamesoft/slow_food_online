@@ -27,6 +27,7 @@ group :development, :test do
   gem 'poltergeist'
   gem 'phantomjs', require: 'phantomjs/poltergeist'
   gem 'capybara-screenshot'
+  gem 'dotenv-rails'
 end
 
 group :development do
