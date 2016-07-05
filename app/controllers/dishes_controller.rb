@@ -11,6 +11,15 @@ class DishesController < ApplicationController
   def show
   end
 
+  def add_to_cart
+    dish = Dish.find(params[:dish_id])
+    order = Order.find_or_create_by(user: current_user)
+    order.add(dish, dish.price)
+    menu = Menu.find(dish.menu_id)
+    flash[:notice] = 'Successfully added to cart'
+    redirect_to dishes_url(menu: menu)
+  end
+
   # GET /dishes/new
   # def new
   #   @dish = Dish.new
