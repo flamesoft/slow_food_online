@@ -13,6 +13,9 @@ gem 'cancancan'
 gem 'geocoder'
 gem 'acts_as_shopping_cart'
 # gem 'foundation-rails'
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'carrierwave'
+gem 'fog'
 
 group :development, :test do
   gem 'pry-rails'
@@ -27,7 +30,6 @@ group :development, :test do
   gem 'poltergeist'
   gem 'phantomjs', require: 'phantomjs/poltergeist'
   gem 'capybara-screenshot'
-  gem 'dotenv-rails'
 end
 
 group :development do
