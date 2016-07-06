@@ -7,12 +7,12 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'faker'
-gem 'haml-rails' # Template engine
+gem 'haml-rails'
 gem 'devise'
 gem 'cancancan'
 gem 'geocoder'
 gem 'acts_as_shopping_cart'
-# gem 'foundation-rails'
+gem 'rack-cors', require: 'rack/cors'
 
 group :development, :test do
   gem 'pry-rails'
