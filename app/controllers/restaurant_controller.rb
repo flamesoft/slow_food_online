@@ -1,4 +1,4 @@
-class RestaurantsController < ApplicationController
+class RestaurantController < ApplicationController
   def show
     @rest = Restaurant.find(params[:id])
     @menus = Menu.where(restaurant: @rest)

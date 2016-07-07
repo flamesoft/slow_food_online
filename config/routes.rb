@@ -3,6 +3,9 @@ Rails.application.routes.draw do
     namespace :v0 do
       resources :ping, only: [:index], constraints: {format: /(json)/}
     end
+    namespace :v1 do
+      get 'restaurant_data', controller: :restaurant_data, action: :index, as: :index
+    end
   end
   resources :restaurants, only: [:show]
   #get 'restaurant/:id', controller: :restaurants, action: :show
