@@ -12,5 +12,10 @@ RSpec.describe 'Auth', type: :request do
       post '/api/v1/auth/sign_in', {email: user.email, password: user.password}, headers
       expect(response.status).to eq 200
     end
+
+    it 'valid credentials returns correct user' do
+      post '/api/v1/auth/sign_in', {email: user.email, password: user.password}, headers
+      expect(response.header['uid']).to eq user.uid
+    end
   end
 end
