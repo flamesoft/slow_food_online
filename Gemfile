@@ -13,6 +13,7 @@ gem 'cancancan'
 gem 'geocoder'
 gem 'acts_as_shopping_cart'
 gem 'rack-cors', require: 'rack/cors'
+gem 'devise_token_auth'
 
 group :development, :test do
   gem 'pry-rails'
