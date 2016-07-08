@@ -1,4 +1,4 @@
-class Api::V1::RestaurantDataController < ApiController
+class Api::V1::RestaurantsController < ApiController
   def index
     category = RestaurantCategory.find_by(title: params[:cat])
     @collection = Restaurant.where(restaurant_category: category)
