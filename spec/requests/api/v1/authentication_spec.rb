@@ -4,8 +4,8 @@ RSpec.describe 'Auth', type: :request do
 
   describe 'POST /api/v1/auth' do
     let(:headers) { {HTTP_ACCEPT: 'application/json'} }
-    let(:credentials) { user.create_new_auth_token }
     let!(:customer) { FactoryGirl.create(:user, username: 'test', email: 'test@gmail.com') }
+    let(:credentials) { customer.create_new_auth_token }
 
     it 'is able to sign in' do
       post '/api/v1/auth', {email: 'test@gmail.com',
