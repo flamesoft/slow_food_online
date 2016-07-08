@@ -8,12 +8,12 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'faker'
 gem 'haml-rails'
-gem 'devise'
 gem 'cancancan'
 gem 'geocoder'
 gem 'acts_as_shopping_cart'
 gem 'rack-cors', require: 'rack/cors'
 gem 'devise_token_auth'
+gem 'coffee-rails'
 
 group :development, :test do
   gem 'pry-rails'

@@ -41,7 +41,7 @@ Feature: As a visitor
     And I fill in "Password" with "12345678"
     And I fill in "Password confirmation" with "12345678"
     And I click "Register"
-    Then I should see "Email has already been taken"
+    Then I should see "Email already in use"
 
   Scenario: Password must not be blank
     Given I am on the "sign up page"
