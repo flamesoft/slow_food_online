@@ -4,7 +4,10 @@ Rails.application.routes.draw do
       resources :ping, only: [:index], constraints: {format: /(json)/}
     end
     namespace :v1 do
-      mount_devise_token_auth_for 'User', at: 'auth', skip: [:omniauth_callbacks]
+      #mount_devise_token_auth_for 'User', at: 'auth', skip: [:omniauth_callbacks]
+      mount_devise_token_auth_for 'User', at: 'auth', skip: [:omniauth_callbacks], controllers: {
+        sessions: 'overrides/sessions'
+      }
       get 'restaurants', controller: :restaurants, action: :index, as: :restaurants
       get 'categories', controller: :categories, action: :index, as: :categories
     end
