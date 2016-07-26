@@ -5,7 +5,7 @@ class AddDeviseTokenToUser < ActiveRecord::Migration
     add_column :users, :uid, :string, null: false, default: ""
 
     ## Tokens
-    add_column :users, :tokens, :json
+    add_column :users, :tokens, :text
 
     add_index :users, [:uid, :provider], unique: true
   end
