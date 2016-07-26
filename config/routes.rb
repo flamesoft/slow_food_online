@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       get 'restaurants', controller: :restaurants, action: :index, as: :restaurants
       get 'categories', controller: :categories, action: :index, as: :categories
+      get 'menus', controller: :menus, action: :index, as: :menus
     end
   end
   resources :restaurants, only: [:show]
