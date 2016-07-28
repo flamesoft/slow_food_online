@@ -1,15 +1,18 @@
-%table.table.table-striped
-  %thead
-    %tr
-      %td Item
-      %td Price
-  %tbody
-    %tr
-      = render partial: 'shopping_cart_item'
+- if @order_items.count == 0
+  = "Your cart is empty"
+- else
+  %table.table.table-striped
+    %thead
+      %tr
+        %td Item
+        %td Price
+    %tbody
+      %tr
+        = render partial: 'shopping_cart_item'
 
-%h3
-  Subtotal: #{@current_order.subtotal} kr
-%h3
-  Taxes: #{@current_order.taxes} kr
-%h2
-  Total price: #{@current_order.total} kr
+  %h3
+    Subtotal: #{@current_order.subtotal} kr
+  %h3
+    Taxes: #{@current_order.taxes} kr
+  %h2
+    Total price: #{@current_order.total} kr

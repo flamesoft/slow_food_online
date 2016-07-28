@@ -71,3 +71,10 @@ Feature: As a user
       And I click "Cart"
       And I click on "Remove Dimsun"
       Then I should not see "Dimsun"
+
+    Scenario: Display information for empty cart
+      Given I am on the "home page"
+      And I am logged-in as "Calle"
+      And "Calle" has no items in the cart
+      And I click "Cart"
+      Then I should see "Your cart is empty"

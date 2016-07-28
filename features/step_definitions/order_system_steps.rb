@@ -45,3 +45,9 @@ Then(/^I should see the items price$/) do
     And I should see "75"
   }
 end
+
+Given(/^"([^"]*)" has no items in the cart$/) do |name|
+  user = User.find_by(username: name)
+  current_order = Order.find_by(user: user)
+  current_order.clear
+end
