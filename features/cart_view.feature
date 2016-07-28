@@ -78,3 +78,9 @@ Feature: As a user
       And "Calle" has no items in the cart
       And I click "Cart"
       Then I should see "Your cart is empty"
+
+    Scenario: Show button for going to checkout page
+      Given I am logged-in as "Calle"
+      And I have added items to the cart
+      And I click "Cart"
+      Then I should see "Complete purchase"
