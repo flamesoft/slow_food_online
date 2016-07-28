@@ -31,7 +31,12 @@ Feature: As a user
 
     Scenario: Show a cart view page
       Given I am logged-in as "Calle"
-      And I am on the "dish list page" for menu "Breakfast"
-      And I click "Add to cart" for "Congee"
+      And I am on the "home page"
       And I click "Cart"
       Then I am on the "cart page"
+
+    Scenario: Display item on cart page
+      Given I am logged-in as "Calle"
+      And I have added items to the cart
+      And I click "Cart"
+      Then I should see the items
