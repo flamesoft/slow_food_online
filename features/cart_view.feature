@@ -64,3 +64,10 @@ Feature: As a user
       And I have added items to the cart
       And I click "Cart"
       Then I should see "Total price: 211.09 kr"
+
+    Scenario: Remove one specific item on cart page
+      Given I am logged-in as "Calle"
+      And I have added items to the cart
+      And I click "Cart"
+      And I click on "Remove Dimsun"
+      Then I should not see "Dimsun"

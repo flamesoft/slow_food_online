@@ -12,10 +12,11 @@ Rails.application.routes.draw do
     end
   end
   resources :restaurants, only: [:show]
-  resource :carts, only: [:show]
+  resources :carts, only: [:index]
   #get 'restaurant/:id', controller: :restaurants, action: :show
   resources :dishes
   post 'add_to_cart', controller: :dishes, action: :add_to_cart
+  post 'remove_from_cart', controller: :carts, action: :remove_from_cart
   devise_for :users, controllers: { registrations: :registrations }
   root 'landing#index'
   get :search_restaurants, controller: :landing, action: :search_restaurants
