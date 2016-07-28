@@ -4,6 +4,4 @@ class CartsController < ApplicationController
     @order_items = current_order.shopping_cart_items.map(&:item)
   end
 
-  def edit
-  end
 end
