@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       }
       get 'restaurants', controller: :restaurants, action: :index, as: :restaurants
       get 'categories', controller: :categories, action: :index, as: :categories
+      get 'dishes', controller: :dishes, action: :index, as: :dishes
     end
   end
   resources :restaurants, only: [:show]
