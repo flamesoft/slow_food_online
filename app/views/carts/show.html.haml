@@ -8,8 +8,8 @@
       = render partial: 'shopping_cart_item'
 
 %h3
-  Subtotal: #{@order_subtotal} kr
+  Subtotal: #{@current_order.subtotal} kr
 %h3
-  Taxes: #{@order_taxes} kr
+  Taxes: #{@current_order.taxes} kr
 %h2
-  Total price: #{@order_total} kr
+  Total price: #{@current_order.total} kr
