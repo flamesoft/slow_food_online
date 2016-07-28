@@ -3,7 +3,13 @@
     %tr
       %td Item
       %td Price (Kr)
-      %td Quantity
   %tbody
     %tr
       = render partial: 'shopping_cart_item'
+
+%h3
+  Subtotal: #{@order_subtotal} kr
+%h3
+  Taxes: #{@order_taxes} kr
+%h2
+  Total price: #{@order_total} kr

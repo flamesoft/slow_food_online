@@ -46,3 +46,21 @@ Feature: As a user
       And I have added items to the cart
       And I click "Cart"
       Then I should see the items price
+
+    Scenario: Display subtotal on cart page
+      Given I am logged-in as "Calle"
+      And I have added items to the cart
+      And I click "Cart"
+      Then I should see "Subtotal: 195.00 kr"
+
+    Scenario: Display total tax on cart page
+      Given I am logged-in as "Calle"
+      And I have added items to the cart
+      And I click "Cart"
+      Then I should see "Taxes: 16.09 kr"
+
+    Scenario: Display total price on cart page
+      Given I am logged-in as "Calle"
+      And I have added items to the cart
+      And I click "Cart"
+      Then I should see "Total price: 211.09 kr"
