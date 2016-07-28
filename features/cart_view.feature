@@ -40,3 +40,9 @@ Feature: As a user
       And I have added items to the cart
       And I click "Cart"
       Then I should see the items
+
+    Scenario: Display item price on cart page
+      Given I am logged-in as "Calle"
+      And I have added items to the cart
+      And I click "Cart"
+      Then I should see the items price

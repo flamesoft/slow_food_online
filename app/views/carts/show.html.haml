@@ -1,2 +1,9 @@
-- @order_items.each do |item|
-  %li= item.name
+%table.table.table-striped
+  %thead
+    %tr
+      %td Item
+      %td Price (Kr)
+      %td Quantity
+  %tbody
+    %tr
+      = render partial: 'shopping_cart_item'

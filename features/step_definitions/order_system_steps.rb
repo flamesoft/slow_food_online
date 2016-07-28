@@ -37,3 +37,11 @@ Then(/^I should see the items$/) do
     And I should see "Congee"
   }
 end
+
+Then(/^I should see the items price$/) do
+  steps %q{
+    Then I should see "80"
+    And I should see "40"
+    And I should see "75"
+  }
+end
