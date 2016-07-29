@@ -7,7 +7,7 @@ Then(/^I should see all the fields$/) do
     Then I should see the field "Zip Code"
     Then I should see the field "Cardholder"
     Then I should see the field "Card Number"
-    Then I should see the field "Expiration Date (MM/YY)"
+    Then I should see the field "Expiration Date"
     Then I should see the field "CVC"
   }
 end

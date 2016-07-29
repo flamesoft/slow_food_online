@@ -1,27 +1,26 @@
 .row
   .small-3.small-centered.columns
-    %h2 Check out
+    %h2 Checkout
     = form_for @person, url: checkout_path(@person), html: { method: :put }do |f|
       .field
-        = f.label :full_name
+        = f.label :full_name, "Full Name"
         = f.text_field :full_name, autofocus: true
-        = f.label :phone_number
-        = f.text_field :phone_number, autofocus: true
+        = f.label :phone_number, "Phone Number"
+        = f.text_field :phone_number
         = f.label :street
-        = f.text_field :street, autofocus: true
+        = f.text_field :street
         = f.label :city
-        = f.text_field :city, autofocus: true
-        = f.label :zip_code
-        = f.text_field :zip_code, autofocus: true
+        = f.text_field :city
+        = f.label :zip_code, "Zip Code"
+        = f.text_field :zip_code
       .field
         = f.label :cardholder
-        = f.text_field :cardholder, autofocus: true
-        = f.label :card_number
-        = f.text_field :card_number, autofocus: true
-        = f.label :expiration_date
-        = f.text_field :expiration_date, autofocus: true
-        = f.label :cvc
-        = f.text_field :cvc, autofocus: true
+        = f.text_field :cardholder
+        = f.label :card_number, "Card Number"
+        = f.text_field :card_number
+        = f.label :expiration_date, "Expiration Date (MM/YY)"
+        = f.text_field :expiration_date
+        = f.label :cvc, "CVC"
+        = f.text_field :cvc
       .actions
         = f.submit "Checkout", class: "success button"
-    = render "devise/shared/links"
