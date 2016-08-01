@@ -21,6 +21,6 @@
         = f.label :expiration_date, "Expiration Date (MM/YY)"
         = f.text_field :expiration_date
         = f.label :cvc, "CVC"
-        = f.text_field :cvc
+        = f.text_field :cvc, maxlength: 3
       .actions
         = f.submit "Checkout", class: "success button"

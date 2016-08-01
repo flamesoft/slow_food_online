@@ -24,9 +24,16 @@ Feature: As a customer
         | Dimsun          | 80    | 1       |
         | Soy milk        | 40    | 1       |
         | Congee          | 75    | 1       |
-        
+
   Scenario: Display all the fields in checkout form
     Given I am logged-in as "Calle"
     And I have added items to the cart
     And I am on the "checkout page"
     Then I should see all the fields
+
+  Scenario: Input shorter than 2 digits is not valid cvc
+    Given I am logged-in as "Calle"
+    And I have added items to the cart
+    And I am on the "checkout page"
+    And I fill in "CVC" with "34"
+    Then I should see "CVC is not valid"
