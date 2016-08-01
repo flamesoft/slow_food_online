@@ -39,6 +39,13 @@ RSpec.describe User, type: :model do
       it { is_expected.not_to allow_value('user@example').for(:email) }
       it { is_expected.not_to allow_value('123@123').for(:email) }
     end
+
+    context 'Validate credit card information' do
+      it { is_expected.not_to allow_value('123').for(:cvc) }
+      it { is_expected.not_to allow_value('12').for(:cvc) }
+      it { is_expected.not_to allow_value('1234').for(:cvc) }
+      it { is_expected.not_to allow_value('a1c').for(:cvc) }
+    end
   end
 
   describe '#role' do
