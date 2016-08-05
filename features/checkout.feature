@@ -38,3 +38,10 @@ Feature: As a customer
     And I fill in "Expiration Date" with "22/22"
     And I click on "Checkout"
     Then I should see "Date format is invalid. It should be MM/YY."
+
+  Scenario: All the fields must be filled
+    Given I am logged-in as "Calle"
+    And I have added items to the cart
+    And I am on the "checkout page"
+    And I click on "Checkout"
+    Then I should see "All the fields must be filled"
