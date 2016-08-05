@@ -4,15 +4,14 @@ class CheckoutsController < ApplicationController
   end
 
   def checkout
-    is_input_valid = is_cvc_valid(params[:user][:cvc])
-    if !is_input_valid
-      show_error("CVC is not valid")
+    if !valid_date?(params[:user][:expiration_date])
+      show_error("Date format is invalid. It should be MM/YY.")
     end
   end
 
   private
-  def is_cvc_valid(cvc)
-    cvc.length == 3
+  def valid_date?(str, format="%m/%Y" )
+    Date.strptime(str,format) rescue false
   end
 
   def show_error(message)
