@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   end
   resources :restaurants, only: [:show]
   resource :checkout, only: [:show]
+  post 'checkout', controller: :checkouts, action: :checkout
   #get 'restaurant/:id', controller: :restaurants, action: :show
   resources :dishes
   post 'add_to_cart', controller: :dishes, action: :add_to_cart

@@ -1,7 +1,7 @@
 .row
   .small-3.small-centered.columns
     %h2 Checkout
-    = form_for @person, url: checkout_path(@person), html: { method: :put }do |f|
+    = form_for @person, url: checkout_path(@person), html: { method: :post }do |f|
       .field
         = f.label :full_name, "Full Name"
         = f.text_field :full_name, autofocus: true
@@ -21,6 +21,6 @@
         = f.label :expiration_date, "Expiration Date (MM/YY)"
         = f.text_field :expiration_date
         = f.label :cvc, "CVC"
-        = f.text_field :cvc, maxlength: 3
+        = f.text_field :cvc, maxlength: 3, minlength: 3
       .actions
         = f.submit "Checkout", class: "success button"

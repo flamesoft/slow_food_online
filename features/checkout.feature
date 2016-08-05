@@ -30,10 +30,3 @@ Feature: As a customer
     And I have added items to the cart
     And I am on the "checkout page"
     Then I should see all the fields
-
-  Scenario: Input shorter than 2 digits is not valid cvc
-    Given I am logged-in as "Calle"
-    And I have added items to the cart
-    And I am on the "checkout page"
-    And I fill in "CVC" with "34"
-    Then I should see "CVC is not valid"
