@@ -1,0 +1,4 @@
+- @order_items.each do |item|
+  %td= item.name
+  %td= item.price
+  %td= link_to 'Remove ' + item.name, remove_from_cart_path(dish_id: item.id), method: :post

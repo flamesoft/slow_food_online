@@ -20,3 +20,34 @@ Then(/^my current order is different from delivered order for "([^"]*)"$/) do |u
     expect(current_order != old_order)
   end
 end
+
+Given(/^I have added items to the cart$/) do
+  steps %q{
+    And I am on the "dish list page" for menu "Breakfast"
+    And I click "Add to cart" for "Dimsun"
+    And I click "Add to cart" for "Soy milk"
+    And I click "Add to cart" for "Congee"
+  }
+end
+
+Then(/^I should see the items$/) do
+  steps %q{
+    Then I should see "Dimsun"
+    And I should see "Soy milk"
+    And I should see "Congee"
+  }
+end
+
+Then(/^I should see the items price$/) do
+  steps %q{
+    Then I should see "80"
+    And I should see "40"
+    And I should see "75"
+  }
+end
+
+Given(/^"([^"]*)" has no items in the cart$/) do |name|
+  user = User.find_by(username: name)
+  current_order = Order.find_by(user: user)
+  current_order.clear
+end
