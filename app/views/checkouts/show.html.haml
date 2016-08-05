@@ -1,4 +1,7 @@
 .row
+- if @order.total == 0
+  %h3 "Your cart is empty"
+- else
   .small-3.small-centered.columns
     %h2 Checkout
     %li= @items_names

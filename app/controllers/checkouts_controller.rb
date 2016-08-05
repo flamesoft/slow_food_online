@@ -4,7 +4,6 @@ class CheckoutsController < ApplicationController
     @order = Order.find_by(user_id: current_user.id)
     @order_items = @order.shopping_cart_items
     get_item_names
-
   end
 
   def checkout

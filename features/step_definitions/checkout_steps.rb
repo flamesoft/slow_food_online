@@ -20,3 +20,23 @@ Given(/^I have added items to the cart$/) do
     And I click "Add to cart" for "Congee"
   }
 end
+
+
+Given(/^I fill everything except Expiration Date$/) do
+  steps %q{
+    And I fill in "Full Name" with "Calle Johansson"
+    And I fill in "Phone Number" with "0811111111"
+    And I fill in "Street" with "Storgatan 1"
+    And I fill in "City" with "Stockholm"
+    And I fill in "Zip Code" with "121122"
+    And I fill in "Cardholder" with "Calle Johansson"
+    And I fill in "Card Number" with "12345678"
+    And I fill in "CVC" with "222"
+  }
+end
+
+Given(/^"([^"]*)" have no items in the shopping cart$/) do |name|
+  user = User.find_by(username: name)
+  order = Order.find_or_create_by(user: user)
+  order.clear
+end

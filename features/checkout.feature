@@ -35,6 +35,7 @@ Feature: As a customer
     Given I am logged-in as "Calle"
     And I have added items to the cart
     And I am on the "checkout page"
+    And I fill everything except Expiration Date
     And I fill in "Expiration Date" with "22/22"
     And I click on "Checkout"
     Then I should see "Date format is invalid. It should be MM/YY."
@@ -52,3 +53,9 @@ Feature: As a customer
     And I am on the "checkout page"
     Then I should see "You have ordered: Dimsun, Soy milk, Congee"
     And I should see "Total price: 195.00kr"
+
+  Scenario: Display empty cart message
+    Given I am logged-in as "Calle"
+    And "Calle" have no items in the shopping cart
+    And I am on the "checkout page"
+    Then I should see "Your cart is empty"
