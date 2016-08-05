@@ -1,6 +1,10 @@
 class CheckoutsController < ApplicationController
   def show
     @person = current_user
+    @order = Order.find_by(user_id: current_user.id)
+    @order_items = @order.shopping_cart_items
+    get_item_names
+
   end
 
   def checkout
@@ -12,6 +16,20 @@ class CheckoutsController < ApplicationController
   end
 
   private
+
+  def get_item_names
+    @items_names = 'You have ordered: '
+    count = 0
+    @order_items.each do |order_item|
+      dish = Dish.find(order_item.item_id)
+      if count == 0
+        @items_names = @items_names + dish.name
+      else
+        @items_names = @items_names + ', ' + dish.name
+      end
+      count = count + 1
+    end
+  end
 
   def is_any_field_empty?
     params[:user][:full_name].length == 0 ||

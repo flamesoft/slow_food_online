@@ -45,3 +45,10 @@ Feature: As a customer
     And I am on the "checkout page"
     And I click on "Checkout"
     Then I should see "All the fields must be filled"
+
+  Scenario: Display order summary
+    Given I am logged-in as "Calle"
+    And I have added items to the cart
+    And I am on the "checkout page"
+    Then I should see "You have ordered: Dimsun, Soy milk, Congee"
+    And I should see "Total price: 195.00kr"
